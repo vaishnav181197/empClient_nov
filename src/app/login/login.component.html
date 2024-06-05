@@ -1,0 +1,32 @@
+<div class="w-100 d-flex justify-content-center align-items-center" style="height: 93vh;background-color: rgb(170, 237, 170);">
+    <div class="w-50 bg-secondary border shadow rounded p-5 row">
+        <div class="col">
+            <h5 class="text-light">Admin Login</h5>
+            <form #logForm="ngForm" (ngSubmit)="handleLogin()">
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control"  #userEmail="ngModel" [(ngModel)]="email" required email name="em" id="floatingInput" placeholder="name@example.com">
+                    <label for="floatingInput">Email address</label>
+                  </div>
+                  <div class="text-danger" *ngIf="userEmail.invalid && userEmail.touched">
+                    *Invalid Email
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input type="password" class="form-control" #userPass="ngModel" [(ngModel)]="password" required pattern="[a-zA-Z0-9@_]*"
+                    minlength="4" maxlength="8"
+                     name="ps" id="floatingPassword" placeholder="Password">
+                    <label for="floatingPassword">Password</label>
+                  </div>
+                  <div *ngIf="userPass.invalid && userPass.touched" class="text-danger">
+                      *Invalid Password
+                  </div>
+                  <div class="text-center">
+                    <button type="submit" [disabled]="logForm.invalid" class="btn btn-info">Login</button>
+                  </div>
+            </form>
+        </div>
+        <div class="col">
+            <img src="https://cdni.iconscout.com/illustration/premium/thumb/login-page-4468581-3783954.png?f=webp" alt="img" width="100%">
+        </div>
+    </div>
+
+</div>

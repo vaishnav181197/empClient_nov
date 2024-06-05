@@ -1,0 +1,38 @@
+<div class="row w-100" style="height: 93vh;">
+    <div class="col-2 bg-dark">
+        <div>
+            <h5 class="text-center mt-4"><a routerLink="/home" class="text-light text-decoration-none">Home</a></h5>
+            <h5 class="text-center mt-4"><a routerLink="/employee" class="text-light text-decoration-none">Employee</a>
+            </h5>
+        </div>
+        <h5 class="text-center"><button class="btn btn-link text-danger" (click)="logout()">LogOut</button></h5>
+
+    </div>
+    <div class="col-10">
+        <div class="row">
+            <div class="col-8">
+                <div class="shadow border d-flex align-items-center justify-content-center p-5"
+                    style="background-image: url('https://i.pinimg.com/originals/0b/a3/d6/0ba3d60362c7e6d256cfc1f37156bad9.jpg');">
+                    <h3 class="text-light">Welcome Admin!!!</h3>
+                </div>
+                <div class="row">
+                    <div class="col shadow border">
+                        <app-calender></app-calender>
+                    </div>
+                    <div class="col shadow border">
+                        <app-chart></app-chart>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="shadow border" style="height: 450px;">
+                    <app-profile></app-profile>
+                </div>
+                <div class="container-fluid shadow border p-5"
+                    style="background-image: url('https://i.pinimg.com/originals/0b/a3/d6/0ba3d60362c7e6d256cfc1f37156bad9.jpg');height: 150px;">
+                    <h4 class="text-light">Employee Count : {{empCount}}</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
